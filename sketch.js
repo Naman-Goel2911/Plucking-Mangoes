@@ -111,10 +111,10 @@ function mouseReleased()
 
 function detectCollision(lstone, mango)
 {
-	var stoneObjPosition = lstone.body.position;
-	var mangoPosition = mango.body.position;
+	var lstonePosition = lstone.position;
+	var mangoPosition = mango.position;
 
-	var distance = dist(stoneObjPosition.x, stoneObjPosition.y, mangoPosition.x, mangoPosition.y);
+	var distance = dist(lstonePosition.x, lstonePosition.y, mangoPosition.x, mangoPosition.y);
 
 	if(distance <= lstone.r + mango.r)
 	{
@@ -129,4 +129,4 @@ function keyPressed()
 		Matter.body.setPosition(stone.body, {x: 180, y: 540});
 		catapult.attach(stone.body);
 	}
-}
+}               
