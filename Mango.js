@@ -9,6 +9,7 @@ class Mango
             friction: 1
         }
 
+        this.r = radius;
         this.body = Bodies.circle(x, y, radius, options);
         this.width = radius + 40;
         this.height = radius + 40;

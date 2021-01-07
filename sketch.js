@@ -71,16 +71,16 @@ function draw() {
 
   pop();
 
-  detectCollision(stone.body, mango1.body);
-  detectCollision(stone.body, mango2.body);
-  detectCollision(stone.body, mango3.body);
-  detectCollision(stone.body, mango4.body);
-  detectCollision(stone.body, mango5.body);
-  detectCollision(stone.body, mango6.body);
-  detectCollision(stone.body, mango7.body);
-  detectCollision(stone.body, mango8.body);
-  detectCollision(stone.body, mango9.body);
-  detectCollision(stone.body, mango10.body);
+  detectCollision(stone, mango1);
+  detectCollision(stone, mango2);
+  detectCollision(stone, mango3);
+  detectCollision(stone, mango4);
+  detectCollision(stone, mango5);
+  detectCollision(stone, mango6);
+  detectCollision(stone, mango7);
+  detectCollision(stone, mango8);
+  detectCollision(stone, mango9);
+  detectCollision(stone, mango10);
 
   drawSprites();
 
@@ -111,8 +111,8 @@ function mouseReleased()
 
 function detectCollision(lstone, mango)
 {
-	var lstonePosition = lstone.position;
-	var mangoPosition = mango.position;
+	var lstonePosition = lstone.body.position;
+	var mangoPosition = mango.body.position;
 
 	var distance = dist(lstonePosition.x, lstonePosition.y, mangoPosition.x, mangoPosition.y);
 
@@ -126,7 +126,7 @@ function keyPressed()
 {
 	if(keyCode === 32)
 	{
-		Matter.body.setPosition(stone.body, {x: 180, y: 540});
+		Matter.Body.setPosition(stone.body, {x: 180, y: 540});
 		catapult.attach(stone.body);
 	}
 }               
